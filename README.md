@@ -1,7 +1,8 @@
 # Dockerized templates
 
 ## Instructions for new projects
-T
+
+
 Templates are limited on this project for now, I plan to add more templates in the future.
 
 ### Supported templates
