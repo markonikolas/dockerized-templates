@@ -1,4 +1,4 @@
-# Docker template files
+# Dockerized templates
 
 ## Instructions for new projects
 
