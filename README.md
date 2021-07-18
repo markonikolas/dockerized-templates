@@ -1,27 +1,19 @@
 # Dockerized templates
 
 ## Instructions for new projects
+T
+Templates are limited on this project for now, I plan to add more templates in the future.
 
-Clone this repo then run:
+### Supported templates
+- [WordPress](https://github.com/WordPress/WordPress)
+- [Bedrock](https://github.com/roots/bedrock)
 
-```bash
-git branch
-* main
-  wordpress
-  bedrock
-  nodejs
-  ...
-```
-
-then select desired branch based on your project for example:
-
-```bash
-git branch <branch name>
-```
+Pick a boilerplate and clone it.
 
 ## Instructions for existing projects
 
-To add these files into existing project, you need to add a new origin and pull files form it. So go to your project and run:
+To add these files into existing project, you need to add a new origin and pull files form it.
+Go to your project and run:
 
 ```bash
 cd <project-name>
@@ -38,7 +30,7 @@ git pull --allow-unrelated-histories
 
 ## Building project
 
-Reinit git repository with
+Re-init git repository
 
 ```bash
 rm -rf .git
