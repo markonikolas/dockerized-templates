@@ -38,6 +38,13 @@ git pull --allow-unrelated-histories
 
 ## Building project
 
+Reinit git repository with
+
+```bash
+rm -rf .git
+git init
+```
+
 add ```127.0.0.1 <branch-name>.local``` to ```/etc/hosts```
 
 finally run ```docker-compose up -d``` to run docker in detached mode.
