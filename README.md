@@ -31,7 +31,14 @@ visit ```http://wordpress.local``` in your browser.
 
 ## Persisting WordPress Database
 
-To persist WordPress database you'll need to put database dump inside ``wp-database`` folder in root.
+This project already comes with demo database, so if you need fresh installation, remove wp-database folder.
+
+Credentials for admin account are:
+
+username: **admin**
+password: **admin123**
+
+After WordPress installation, to persist WordPress database you'll need to put database dump inside ``wp-database`` folder in root.
 
 To Dump a database, run from root:
 
