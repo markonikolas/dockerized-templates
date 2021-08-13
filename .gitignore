@@ -3,3 +3,6 @@
 
 # WordPress files
 wp-config.php
+
+# node modules
+node_modules
