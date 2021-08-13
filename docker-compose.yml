@@ -8,7 +8,6 @@ services:
       - ./wp-database:/docker-entrypoint-initdb.d
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: wordpress
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
@@ -17,10 +16,9 @@ services:
   web:
     depends_on:
       - db
-    image: wordpress:latest
+    build: .
     volumes:
-      - web:/var/www/html
-      - ./wp-content:/var/www/html/wp-content
+      - .:/var/www/html
     ports:
       - "80:80"
     restart: always
