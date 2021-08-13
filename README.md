@@ -1,59 +1,45 @@
 # Dockerized templates
 
-## Instructions for new projects
-
-Templates are limited on this project for now, I plan to add more templates in the future.
-
-### Supported templates
+## Supported templates
 - [WordPress](https://github.com/WordPress/WordPress)
 - [Bedrock](https://github.com/roots/bedrock)
 
 Pick a boilerplate and clone it.
 
 ## Instructions for existing projects
+If you already have cloned WordPress project, or currently working on one, switch to ``template/<template>`` branch to pull only docker files.
 
-To add these files into existing project, you need to add a new origin and pull files form it.
-Go to your project and run:
+## Instructions for new projects
+It's as simple as cloning the repo and building this project.
 
-```bash
-cd <project-name>
-git remote add template <repo-url>
-git pull template template/<template>
-```
+``git clone git@github.com:markonikolas/dockerized-templates.git``
 
+or with GitHub-CLI:
+
+``gh repo clone markonikolas/dockerized-templates``
+
+Next, checkout desired branch for example:
+
+``git checkout full/wordpress``
 ## Building project
 
-In order to clone this repository without cloning its history, we need to remote .git folder and template remote. You will need to save current remote **url**, to see what the current remote url is run:
+Add ```127.0.0.1 wordpress.local``` to ```/etc/hosts```
+
+Finally run ```docker-compose up -d``` to run docker in detached mode.
+
+visit ```http://wordpress.local``` in your browser.
+
+## Persisting WordPress Database
+
+To persist WordPress database you'll need to put database dump inside ``wp-database`` folder in root.
+
+To Dump a database, run from root:
 
 ```bash
-git remote 
-origin
-template
-
-git remote get-url origin git@github.com:markonikolas/dockerized-templates.gitgit@github.com
+docker-compose exec db mysqldump -uroot -v wordpress > wp-database/database.sql
 ```
 
-Save remote url somewhere we'll need it later.
+Make sure you installed WordPress site first.
 
-Re-init git repository by running:
-
-```bash
-rm -rf .git
-git init
-```
-
-Add old remote as origin for example:
-
-```bash
-git remote add origin
-git remote set-url origin git@github.com...
-git fetch -v
-From github.com:markonikolas/dockerized-templates
- = [up to date]      main       -> origin/main
-```
-
-add ```127.0.0.1 <branch-name>.local``` to ```/etc/hosts```
-
-finally run ```docker-compose up -d``` to run docker in detached mode.
-
-visit ```http://<branch-name>.local``` in your browser.
+If you wish to rename demo database folder don't forget to change ``docker-compose`` file,
+line that has volume reference ``./wp-database:/docker-entrypoint-initdb.d``
