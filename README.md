@@ -38,6 +38,8 @@ Credentials for admin account are:
 username: **admin**
 password: **admin123**
 
+Make sure to replace email as current one is ``test@test.com``.
+
 After WordPress installation, to persist WordPress database you'll need to put database dump inside ``wp-database`` folder in root.
 
 To Dump a database, run from root:
