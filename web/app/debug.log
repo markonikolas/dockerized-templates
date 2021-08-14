@@ -1,0 +1,2 @@
+[14-Aug-2021 09:46:16 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): Connection refused in /var/www/html/web/wp/wp-includes/wp-db.php on line 1653
+[14-Aug-2021 09:46:22 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): Connection refused in /var/www/html/web/wp/wp-includes/wp-db.php on line 1653
